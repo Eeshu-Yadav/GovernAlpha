@@ -109,7 +109,7 @@ const Carsoule2 = () => {
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500"
-          style={{ transform: `translateX(-${currentIndex * 29.5}%)` }}
+          style={{ transform:  `translateX(-${currentIndex * 29.5}%)` }}
         >
           {items.map((scheme, index) => (
             <div
