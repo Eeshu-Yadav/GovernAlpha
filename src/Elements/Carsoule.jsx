@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { GrFormPrevious } from "react-icons/gr";
 import { GrFormNext } from "react-icons/gr";
+import { Link } from 'react-router-dom';
 
 const Carsoule = ({ schemes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,8 +35,9 @@ const Carsoule = ({ schemes }) => {
           style={{ transform: `translateX(-${currentIndex * 28.8}%)` }}
         >
 {items.map((scheme, index) => (
+  <Link key={index}  to={`/scheme/${scheme.id}`}>
   <div 
-    key={index} 
+    
     className="px-5 pt-4 pb-3 gap-1 rounded-md bg-richblack-800 mx-5 flex justify-center  flex-col shadow-inner shadow-blue-800"
     style={{
                 backgroundColor: 'rgba(255, 255, 224, 0.5)', // Light yellow with transparency
@@ -55,7 +57,7 @@ const Carsoule = ({ schemes }) => {
     <p className='text-richblack-50 text-sm'>
       {scheme.longDescription.substring(0, 60) + "..."}
     </p>
-  </div>
+  </div></Link>
 ))}
 
         </div>

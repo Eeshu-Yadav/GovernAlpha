@@ -12,6 +12,7 @@ import UploadDocuments from './Components/UploadDocuments'
 import ApplyLoan from './Components/ApplyLoan'
 import Profile from './Components/Profile'
 import Chatbot from './Components/Chatbot'
+import SchemeDetails from './Components/SchemeDetails'
 
 function App() {
   const location = useLocation();
@@ -86,6 +87,7 @@ function App() {
   <Route path='/apply-loan' element={<ApplyLoan/>} ></Route>
   <Route path='/profile' element={<Profile/>} ></Route>
   <Route path='/chatbot' element={<Chatbot/>} ></Route>
+  <Route path ="/scheme/:Schemeid" element={<SchemeDetails/>} ></Route>
 </Routes>
     </div>
   )
