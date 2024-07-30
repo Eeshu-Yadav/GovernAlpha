@@ -95,3 +95,36 @@
   transform: matrix(1, 0, -0.03, 1, 0, 0);
   width: 372.95px;
 }
+/* Custom scrollbar styles for WebKit browsers */
+/* Custom scrollbar styles for WebKit browsers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #161D29; /* Track background */
+  border-radius: 10px; /* Rounded corners for the track */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #000814, #000814); /* Gradient for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 3px solid #06388371; /* Border around the thumb */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #000b1b, #000814); /* Darker gradient on hover */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+/* Horizontal scrollbar custom styling (if needed) */
+.custom-scrollbar::-webkit-scrollbar-horizontal {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:horizontal {
+  background: linear-gradient(90deg, #000814, #506078); /* Gradient for the thumb */
+}
+

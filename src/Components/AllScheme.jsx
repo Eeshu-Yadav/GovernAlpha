@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "../index.css"
 
 const AllScheme = () => {
   const schemes = [
@@ -116,7 +117,7 @@ const AllScheme = () => {
     },
   ] 
   return (
-<div className='w-full max-h-[100vh] justify-center items-center flex overflow-scroll'>
+<div className='w-full max-h-[100vh] justify-center items-center flex overflow-scroll overflow-x-hidden custom-scrollbar'>
   <div className='w-11/12 grid grid-cols-2 mt-10 gap-y-2'>
     {schemes.map((scheme, index) => (
       <Link key={index} to={`/scheme/${scheme.id}`}>
