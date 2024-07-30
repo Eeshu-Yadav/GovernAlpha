@@ -142,7 +142,7 @@ const AllScheme = () => {
             <p className='text-richblack-50 text-sm'>
               {scheme.longDescription.substring(0, 60) + "..."}
             </p>
-            <div className='flex space-x-2 mt-2'>
+            <div className='flex gap-3 mt-2'>
               <p
                 style={{
                   backgroundColor: 'rgba(144, 238, 144, 0.5)', // Light green with transparency
@@ -165,7 +165,7 @@ const AllScheme = () => {
                 }}
                 className='border-2 rounded-md px-2 font-medium transition-transform duration-300 hover:scale-105 hover:bg-opacity-90 hover:shadow-lg'
               >
-                For age group :{scheme.age}
+                 Age: {scheme.age}
               </p>
               <p
                 style={{
