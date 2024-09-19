@@ -12,7 +12,7 @@ const Translator = () => {
   const [translationLanguage, setTranslationLanguage] = useState("hi_IN"); // Language for translation
 
   const recognition = new (window.SpeechRecognition ||
-    window.webkitSpeechRecognition)();
+  window.webkitSpeechRecognition)();
   recognition.continuous = true;
   recognition.interimResults = true;
 
@@ -61,6 +61,8 @@ const Translator = () => {
   ];
 
   const startListening = () => {
+    setTranscript("");
+    setTranslatedText("");
     setListening(true);
     recognition.start();
   };
@@ -68,12 +70,39 @@ const Translator = () => {
   const stopListening = () => {
     setListening(false);
     recognition.stop();
+    fetchData();
   };
 
   const clearText = () => {
     setTranscript("");
     setTranslatedText("");
   };
+  const fetchData = async()=>{
+    try{
+      setTranslatedText("")
+      const data = await fetch("https://myproject-z7ov.onrender.com/api/translate/",{
+        method:"POST",
+        headers:{
+        "Content-Type":"application/json"
+        },
+        body:JSON.stringify({text:transcript})
+      })
+      const response = await data.json()
+      console.log("to translate",transcript)
+      console.log(" response",response)
+      setTranslatedText(response.translated_text)
+      
+     
+    }
+    catch(err){
+console.log("Error in fetch",err)
+    }
+}
+
+useEffect(()=>{
+  
+  console.log("translatedText",translatedText)
+},[translatedText])
 
   return (
     <div className="min-w-[15rem] max-w-[50rem] px-4 pt-4">
